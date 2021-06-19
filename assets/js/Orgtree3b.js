@@ -32,11 +32,11 @@ var orgTree = [
   ["0-0-0-7", "CyfRodalDropdown", "", "", ""],
   ["0-0-0-8", "CannotEditRodal", "", "", ""],
 
-  //   ["0-0-0-4-0", "LikeButton", "", "", ""],
-  //   ["0-0-0-4-1", "FlagButton", "", "", ""],
-  //   ["0-0-0-4-2", "BookmarkButton", "", "", ""],
-  //   ["0-0-0-4-3", "ShareButton", "", "", ""],
-  //   ["0-0-0-4-4", "RemoveListRodal", "", "", ""],
+  ["0-0-0-4-0", "LikeButton", "", "", ""],
+  ["0-0-0-4-1", "FlagButton", "", "", ""],
+  ["0-0-0-4-2", "BookmarkButton", "", "", ""],
+  ["0-0-0-4-3", "ShareButton", "", "", ""],
+  ["0-0-0-4-4", "RemoveListRodal", "", "", ""],
 ];
 
 window.onload = function () {
@@ -50,11 +50,13 @@ var fieldLength2Store = [];
 var fieldLength3Store = [];
 var fieldLength4Store = [];
 var fieldLength5Store = [];
+var fieldLength6Store = [];
 var buttonLength1Store = [];
 var buttonLength2Store = [];
 var buttonLength3Store = [];
 var buttonLength4Store = [];
 var buttonLength5Store = [];
+var buttonLength6Store = [];
 
 function numberOfFieldsVar() {
   for (i = 0; i < orgTree.length; i++) {
@@ -86,7 +88,7 @@ function numberOfFieldsVar() {
       );
     } else if (num == 4) {
       var res = orgTree[i][0].split("-");
-      fieldLength4Store.push(
+      fieldLength5Store.push(
         "field" +
           res[0] +
           "-" +
@@ -98,7 +100,7 @@ function numberOfFieldsVar() {
           "-" +
           res[4]
       );
-      buttonLength4Store.push(
+      buttonLength5Store.push(
         "btn" +
           res[0] +
           "-" +
@@ -109,6 +111,36 @@ function numberOfFieldsVar() {
           res[3] +
           "-" +
           res[4]
+      );
+    } else if (num == 5) {
+      var res = orgTree[i][0].split("-");
+      fieldLength6Store.push(
+        "field" +
+          res[0] +
+          "-" +
+          res[1] +
+          "-" +
+          res[2] +
+          "-" +
+          res[3] +
+          "-" +
+          res[4] +
+          "-" +
+          res[5]
+      );
+      buttonLength6Store.push(
+        "btn" +
+          res[0] +
+          "-" +
+          res[1] +
+          "-" +
+          res[2] +
+          "-" +
+          res[3] +
+          "-" +
+          res[4] +
+          "-" +
+          res[5]
       );
     }
   }
