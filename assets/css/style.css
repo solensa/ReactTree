@@ -1,0 +1,705 @@
+/*
+
+
+       d8888                          888 d8b          888    
+      d88888                          888 Y8P          888    
+     d88P888                          888              888    
+    d88P 888  .d8888b 888d888 .d88b.  888 888 .d8888b  888888 
+   d88P  888 d88P"    888P"  d88""88b 888 888 88K      888    
+  d88P   888 888      888    888  888 888 888 "Y8888b. 888    
+ d8888888888 Y88b.    888    Y88..88P 888 888      X88 Y88b.  
+d88P     888  "Y8888P 888     "Y88P"  888 888  88888P'  "Y888 
+
+
+- - - - - - - Created By - - - - - - - - -
+
+Robert J Claridge - rob@okamistudio.com 
+Maxwell Sutcliffe - max@okamistudio.com
+David Wilkins - dominus_sapiens@yahoo.co.uk
+
+- - - - - - - - - - - - - - - - - - - - - -
+
+*/
+
+/* Additional Styles */
+
+body * {
+  font-family: "Source Sans Pro", sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+button,
+select,
+html,
+textarea,
+input {
+  font-family: "Source Sans Pro", sans-serif !important;
+}
+
+fieldset {
+  padding: 0px 0px 25px;
+  margin: 5px 5px 25px;
+  border: none !important;
+  max-width: 1000px;
+  margin: 0px auto 30px;
+}
+
+/*fieldset#fieldG {
+    border: none !important;
+    max-width: 1000px;
+    margin: 0px auto 30px;
+}*/
+
+.contentWrap h2 {
+  font-style: italic;
+  color: #226fbd;
+  max-width: 600px;
+  text-align: center;
+  width: 100%;
+  margin: 25px auto 0px;
+  font-size: 18px;
+  padding: 0px 30px 0px;
+  box-sizing: border-box;
+  line-height: 25px;
+}
+
+.subContent img {
+  float: left;
+  margin-right: 35px;
+  border: 5px solid #fff;
+  box-shadow: 0px 1px 3px #ababab;
+  -o-box-shadow: 0px 1px 3px #ababab;
+  -ms-box-shadow: 0px 1px 3px #ababab;
+  -webkit-box-shadow: 0px 1px 3px #ababab;
+  width: 270px;
+}
+
+.subContent {
+  width: 100%;
+  display: block;
+  position: relative;
+  float: left;
+  margin: 35px 0px 30px;
+  clear: both;
+}
+
+.contentWrap .subContent p {
+  font-size: 15px;
+  line-height: 20px;
+  text-align: left;
+  max-width: 600px;
+  padding: 0px;
+  float: left;
+}
+
+.centreBtn {
+  width: 100%;
+  float: left;
+  clear: both;
+  background-color: #ffffff;
+  border: 2px solid #eee;
+  padding: 20px 20px 30px;
+  transition: border 0.5s ease-in-out;
+}
+
+.centreBtn:hover {
+  border: 2px solid black;
+  transition: border 0.7s ease-in-out;
+}
+
+span.divider {
+  width: 80px;
+  height: 3px;
+  position: absolute;
+  bottom: 0px;
+  margin: 0px auto;
+  left: 0px;
+  right: 0px;
+  background-color: red;
+}
+
+legend a {
+  border-bottom: none;
+}
+
+.contentWrap legend {
+  width: 100%;
+  display: block;
+  text-align: center;
+  position: relative;
+  padding-bottom: 5px;
+}
+
+/* legend h1 { text-transform:uppercase; text-align:center; } */
+legend h1 {
+  text-align: center;
+}
+
+#footR img {
+  opacity: 0.5;
+  transition: opacity 0.3s ease-in-out;
+}
+#footR img:hover {
+  opacity: 1;
+}
+
+.transAll {
+  transition: all 0.2s ease-in-out;
+}
+
+p {
+  margin-top: 5px;
+  margin-bottom: 10px;
+  font-size: small;
+}
+ul {
+  font-size: small;
+  text-align: left;
+}
+h1 a {
+  font-size: 38px;
+  color: #000;
+  padding: 0px 0px 0px 0px;
+  margin: 0px 0px 0px 0px;
+  font-weight: 700;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.btnEdit {
+  width: 21px;
+  height: 21px;
+  background: url("iconEdit.png") 0 0 no-repeat;
+  display: block;
+  position: absolute;
+  top: 10px;
+  right: 11px;
+  opacity: 0.5;
+}
+
+.btnEdit:hover {
+  opacity: 1;
+}
+
+/* 14th May */
+.searchBar {
+  width: 600px;
+  margin: 0 auto;
+}
+.idNumber {
+  position: absolute;
+  right: 11px;
+  opacity: 0.7;
+}
+
+/* Evening 17th */
+
+.header {
+  /* background-color:#000; */
+  width: 100%;
+  position: relative;
+  height: 130px;
+  border-bottom: 1px solid #333;
+}
+
+.LBGlogo,
+.betaLogo {
+  position: relative;
+}
+
+.LBGlogo {
+  position: absolute;
+  top: 0px;
+  left: 15px;
+}
+.betaLogo {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+}
+
+#footR > a {
+  display: block;
+  float: left;
+}
+#footR > a:nth-child(1) {
+  margin-top: -1px;
+}
+#footR > a:nth-child(2) {
+  margin-top: 3px;
+}
+
+/* - - */
+
+html {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0px;
+  text-align: center;
+  padding: 0px;
+}
+
+html,
+body,
+#container {
+  height: 100%;
+}
+body > #container {
+  height: auto;
+  min-height: 100%;
+}
+
+.guideTitle {
+  font-size: 15px;
+  margin: 0px 10px 40px 10px;
+  font-family: sans-serif;
+  /* text-transform:uppercase; */
+  color: #4d4d4d;
+  text-decoration: none;
+  font-weight: bold;
+  background-color: #f2f2f2;
+  padding: 10px 11px 7px;
+  border-radius: 4px;
+  border: 1px solid #d8d8d8;
+  cursor: pointer;
+}
+.guideTitle:hover {
+  background-color: #48a83e;
+  border: 1px solid #328a39;
+  color: #fff;
+}
+.contentTitle {
+  font-size: 22px;
+  font-family: sans-serif;
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+}
+.contentFont {
+  font-size: 25px;
+  margin: 0px 10px 40px 10px;
+  font-family: sans-serif;
+  color: #333;
+}
+#AcrolistContent {
+  width: 70%;
+  margin: 0 auto;
+  font-family: sans-serif;
+  color: #333;
+  text-align: left;
+  font-size: 14px;
+  line-height: 19px;
+}
+.textBox {
+  width: 70%;
+  margin: 0 auto;
+  padding-top: 20px;
+  padding-bottom: 25px;
+}
+.size14 {
+  color: #333;
+  font-size: 14px;
+}
+.size14Link {
+  font-size: 14px;
+}
+.contentBlock {
+  position: relative;
+  display: block;
+  background-color: #fff;
+  width: 100%;
+}
+
+.contentBlock.greyBG {
+  background-color: #e6e6e6;
+}
+
+.contentBlock img {
+  margin: 30px 30px;
+}
+
+#footer {
+  clear: both;
+  background-color: #555;
+  position: relative;
+  z-index: 10;
+  height: 50px;
+  margin-top: -50px;
+  overflow: hidden;
+}
+#footC {
+  width: 95%;
+  margin: 0 auto;
+}
+#footR {
+  float: right;
+}
+body a:hover,
+body a:focus {
+  transition: color 0.3s ease-in-out;
+  color: #333;
+  border: none;
+}
+#content {
+  padding-bottom: 50px;
+}
+.hiveLogo {
+  width: auto;
+  height: 10px;
+  display: block;
+  background: transparent url("Acrolist hive btn.png") center top no-repeat;
+}
+.hiveLogo:hover {
+  background-image: url("Acrolist hive btn hi.png");
+}
+#footerText {
+  font-size: 14px;
+  margin: 2px 10px 40px 10px;
+  font-family: sans-serif;
+  color: #bababa;
+  vertical-align: middle;
+  line-height: 50px;
+  display: inline-block;
+  text-decoration: none;
+  float: left;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+}
+#footerText:hover {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s ease-in-out;
+}
+#LBGbanner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #006633;
+  width: 100%;
+  height: 120px;
+  z-index: -1;
+}
+
+#ACRlogo {
+  display: inline-block;
+  position: relative;
+  top: -57px;
+  z-index: 100;
+}
+
+#LBGlogoBlock {
+  display: inline-block;
+  position: relative;
+  background-color: fff;
+  height: 50px;
+  width: 100%;
+}
+.LBGdivider {
+  width: 1%;
+  height: auto;
+  display: inline-block;
+}
+.LBGdivider2 {
+  width: 36%;
+
+  height: auto;
+  display: inline-block;
+}
+.LBGdivider3 {
+  width: 3%;
+  height: auto;
+  display: inline-block;
+}
+
+#tst {
+  width: 300px;
+  margin: 0 auto;
+}
+#tst2 {
+  width: 800px;
+  margin: 0 auto;
+}
+
+#navi a {
+  color: #333;
+  font-family: sans-serif;
+  text-decoration: none;
+}
+#listsUP {
+  width: 820px;
+  margin: 0 auto;
+}
+#floatL {
+  display: inline-block;
+  float: left;
+  width: 400;
+}
+#floatR {
+  display: inline-block;
+  float: right;
+  width: 400;
+}
+
+.permaBoxLink {
+  width: 100%;
+  display: block;
+  box-sizing: border-box;
+  text-decoration: none;
+  color: #2e2e2e;
+  font-size: small;
+  padding: 25px;
+  text-align: center;
+  line-height: 30px;
+}
+.listsUP .cenretBtn a {
+  margin-bottom: 10px;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.avatar {
+  max-width: 150px;
+}
+img {
+  max-width: 100%;
+}
+h3 {
+  font-size: 14px;
+  margin: 0px 0px 0px 0px;
+  font-weight: bold;
+  display: inline-block;
+}
+
+h4 {
+  font-size: 16px;
+  margin: 0px 0px 0px 0px;
+  font-weight: normal;
+  font-weight: bold;
+  color: green;
+  display: inline-block;
+  width: 80px;
+}
+h5 {
+  font-size: 16px;
+  margin: 0px 0px 0px 0px;
+  font-weight: normal;
+  font-weight: bold;
+  color: green;
+  display: inline-block;
+  width: 80px;
+  opacity: 0;
+}
+
+a.unselectedBtn,
+a.selectedBtn {
+  border: solid 1px #ccc;
+  border-radius: 5px;
+  padding: 7px 14px;
+  margin-bottom: 10px;
+}
+
+.sort {
+  display: inline-block;
+  padding: 8px 30px;
+  border-radius: 6px;
+  border: none;
+  color: #fff;
+  text-decoration: none;
+  background-color: #006846;
+  height: 30px;
+  width: 155px;
+}
+.sort:hover {
+  text-decoration: none;
+  background-color: #33866b;
+}
+.sort:focus {
+  outline: none;
+}
+.sort:after {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  content: "";
+  position: relative;
+  top: -10px;
+  right: -5px;
+}
+.sort.asc:after {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #fff;
+  content: "";
+  position: relative;
+  top: 13px;
+  right: -5px;
+}
+.sort.desc:after {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid #fff;
+  content: "";
+  position: relative;
+  top: -10px;
+  right: -5px;
+}
+
+.unselectedBtn {
+  color: white;
+  cursor: pointer;
+  width: 155px;
+  background-color: transparent;
+  border: 0px;
+  height: 50px;
+  font-weight: bold;
+  /* text-transform: uppercase; */
+  /* padding: 15px 10px 15px; */
+  vertical-align: middle;
+  white-space: normal;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  font-size: 14px;
+}
+
+textarea,
+input {
+  outline: none !important;
+}
+
+.btnWrap {
+  margin-top: -20px;
+}
+
+span.unselectedBtn {
+  background-color: #ffffff;
+  border: 2px solid black;
+  cursor: pointer;
+  position: relative;
+  width: 155px;
+  height: 50px;
+  margin: 30px 5px 0px;
+  vertical-align: middle;
+  display: inline-block;
+  white-space: normal;
+  font-size: 14px;
+  transition: all 0.5s ease-in-out;
+}
+
+span.unselectedBtn .unselectedBtn {
+  color: black;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+span.unselectedBtn .unselectedBtn:hover {
+  color: #fff;
+}
+
+span.unselectedBtn:hover {
+  background-color: black;
+  border: 2px solid black;
+  transition: all 0.5s ease-in-out;
+}
+
+.selectedBtn {
+  background-color: #0ebd09;
+  border: 1px solid #0ba406;
+  color: white;
+  cursor: pointer;
+  width: 155px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-color: transparent;
+  background-image: url("../images/bottomArrow2.png");
+  background-position: 0px -4px;
+  background-repeat: no-repeat;
+  border: 0px;
+  height: 64px;
+  padding-bottom: 17px;
+  font-weight: bold;
+  /* text-transform: uppercase; */
+  /* padding: 15px 10px 15px; */
+  vertical-align: middle;
+  white-space: normal;
+  font-size: 14px;
+}
+
+.unselectedBtn2 {
+  background-color: #d0d0d0;
+  border: none;
+  color: white;
+  cursor: pointer;
+  width: auto;
+  height: 40px;
+  font-weight: bold;
+  /* text-transform: uppercase; */
+  padding: 8px 9px 10px;
+  /* margin: 1px 1px 5px; */
+  vertical-align: top;
+  /* display: inline-block; */
+  white-space: normal;
+  font-size: 13px;
+  transition: background-color 0.3s ease-in-out;
+  float: right;
+}
+.unselectedBtn2:hover {
+  background-color: #165da7;
+  transition: background-color 0.3s ease-in-out;
+}
+.selectedBtn2 {
+  background-color: #000;
+  transition: background-color 0.3s ease-in-out;
+  color: white;
+  border: none;
+  cursor: pointer;
+  width: auto;
+  height: 40px;
+  font-weight: bold;
+  /* text-transform: uppercase; */
+  padding: 9px 9px 10px;
+  /* margin: 1px 1px 5px; */
+  /* display: inline-block; */
+  vertical-align: top;
+  white-space: normal;
+  font-size: 13px;
+  float: right;
+}
+.selectedBtn2:hover {
+  transition: background-color 0.3s ease-in-out;
+  background-color: #6386a5;
+}
+.inputWrap {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.searchBar {
+  position: relative;
+}
+.new-header {
+}
+md-content.md-default-theme,
+md-content {
+  color: rgba(0, 0, 0, 0.87);
+  background-color: #eee;
+}
+.md-whiteframe-1dp,
+.md-whiteframe-z1 {
+  box-shadow: none !important;
+  /* border: 1px solid #333; */
+}

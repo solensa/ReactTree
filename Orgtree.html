@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="UTF-8" />
+    <title>Orgtree</title>
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/themes/smoothness/jquery-ui.css"
+    />
+    <link
+      rel="stylesheet"
+      id="main-css"
+      href="assets/css/style.css"
+      type="text/css"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,400italic,300,300italic"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet prefetch"
+      href="https://cdn.gitcdn.link/cdn/angular/bower-material/v1.0.8/angular-material.css"
+    />
+    <link
+      rel="stylesheet prefetch"
+      href="https://material.angularjs.org/1.0.8/docs.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-114/svg-assets-cache.js"></script>
+    <script src="https://cdn.gitcdn.link/cdn/angular/bower-material/v1.0.8/angular-material.js"></script>
+
+    <script type="text/javascript" src="assets/js/orgtree3b.js"></script>
+    <script
+      type="text/javascript"
+      src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.js"
+    ></script>
+  </head>
+
+  <body>
+    <div id="container">
+      <div id="content">
+        <div class="new-header">
+          <div
+            ng-controller="DemoCtrl as ctrl"
+            layout="column"
+            ng-cloak=""
+            class="autocompletedemoBasicUsage"
+            ng-app="MyApp"
+          >
+            <md-content class="md-padding">
+              <form ng-submit="$event.preventDefault()" class="searchBar">
+                <md-autocomplete
+                  ng-disabled="ctrl.isDisabled"
+                  md-no-cache="ctrl.noCache"
+                  md-selected-item="ctrl.selectedItem"
+                  md-search-text-change="ctrl.searchTextChange(ctrl.searchText)"
+                  md-search-text="ctrl.searchText"
+                  md-selected-item-change="ctrl.selectedItemChange(item)"
+                  md-items="item in ctrl.querySearch(ctrl.searchText)"
+                  md-item-text="item.display"
+                  md-min-length="0"
+                  md-max-length="100px"
+                  placeholder="Search for a function or person..."
+                >
+                  <md-item-template>
+                    <span
+                      md-highlight-text="ctrl.searchText"
+                      md-highlight-flags="^i"
+                      >{{item.display}}</span
+                    >
+                  </md-item-template>
+
+                  <md-not-found>
+                    No states matching "{{ctrl.searchText}}" were found.
+                    <a ng-click="ctrl.newState(ctrl.searchText)"
+                      >Create a new one!</a
+                    >
+                  </md-not-found>
+                </md-autocomplete>
+                <div class="inputWrap">
+                  <input
+                    type="button"
+                    value="Person"
+                    ng-click="ButtonClick()"
+                    id="btnPerson"
+                    class="unselectedBtn2"
+                    value="Person"
+                  />
+                  <input
+                    type="button"
+                    value="Function"
+                    ng-click="ButtonClick()"
+                    id="btnArea"
+                    class="selectedBtn2"
+                    value="Function"
+                  />
+                </div>
+              </form>
+            </md-content>
+          </div>
+        </div>
+
+        <form id="htmlStuff" name="aForm" class="centreIt">
+          <br /><br />
+          <!--    ##  Ground Level  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -   -->
+          <fieldset id="fieldG">
+            <div class="contentWrap">
+              <legend>
+                <h1><a href="">Cyfer</a></h1>
+                <span class="divider"></span>
+              </legend>
+              <div class="subContent">
+                <img
+                  src="https://images.unsplash.com/photo-1482685945432-29a7abf2f466?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2266&q=80"
+                />
+                <p class="textBox"><em></em>Hello World</p>
+              </div>
+            </div>
+            <div class="centreBtn">
+              <div class="btnWrap">
+                <span class="unselectedBtn"
+                  ><input
+                    type="button"
+                    id="btn0"
+                    class="unselectedBtn"
+                    value="Index"
+                    onClick="btnClick([0])"
+                /></span>
+              </div>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+    <div id="footer">
+      <div id="footC">
+        <div id="footR"></div>
+      </div>
+    </div>
+  </body>
+</html>
