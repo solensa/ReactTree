@@ -45,18 +45,13 @@ window.onload = function () {
 };
 
 var numberOfFields = 0;
-var fieldLength1Store = [];
-var fieldLength2Store = [];
-var fieldLength3Store = [];
-var fieldLength4Store = [];
-var fieldLength5Store = [];
-var fieldLength6Store = [];
-var buttonLength1Store = [];
-var buttonLength2Store = [];
-var buttonLength3Store = [];
-var buttonLength4Store = [];
-var buttonLength5Store = [];
-var buttonLength6Store = [];
+
+// Create all the variables that store the relevent values from the input arr. It'd be better to use an array - refactor in future.
+for (let i = 0; i < 100; i++) {
+  window["fieldLength" + i + "Store"] = [];
+  window["buttonLength" + i + "Store"] = [];
+  console.log(i);
+}
 
 function numberOfFieldsVar() {
   for (i = 0; i < orgTree.length; i++) {
@@ -70,77 +65,22 @@ function numberOfFieldsVar() {
     if (num == 0) {
       fieldLength1Store.push("field" + orgTree[i][0]);
       buttonLength1Store.push("btn" + orgTree[i][0]);
-    } else if (num == 1) {
+    } else {
       var res = orgTree[i][0].split("-");
-      fieldLength2Store.push("field" + res[0] + "-" + res[1]);
-      buttonLength2Store.push("btn" + res[0] + "-" + res[1]);
-    } else if (num == 2) {
-      var res = orgTree[i][0].split("-");
-      fieldLength3Store.push("field" + res[0] + "-" + res[1] + "-" + res[2]);
-      buttonLength3Store.push("btn" + res[0] + "-" + res[1] + "-" + res[2]);
-    } else if (num == 3) {
-      var res = orgTree[i][0].split("-");
-      fieldLength4Store.push(
-        "field" + res[0] + "-" + res[1] + "-" + res[2] + "-" + res[3]
+      let fieldLengthStoreStr = "fieldLength" + res.length + "Store";
+      let buttonLengthStoreStr = "buttonLength" + res.length + "Store";
+
+      let fieldPushStr = "field";
+      let btnPushStr = "btn";
+      for (let j = 0; j < res.length; j++) {
+        fieldPushStr += res[j] + "-";
+        btnPushStr += res[j] + "-";
+      }
+      window[fieldLengthStoreStr].push(
+        fieldPushStr.substring(0, fieldPushStr.length - 1)
       );
-      buttonLength4Store.push(
-        "btn" + res[0] + "-" + res[1] + "-" + res[2] + "-" + res[3]
-      );
-    } else if (num == 4) {
-      var res = orgTree[i][0].split("-");
-      fieldLength5Store.push(
-        "field" +
-          res[0] +
-          "-" +
-          res[1] +
-          "-" +
-          res[2] +
-          "-" +
-          res[3] +
-          "-" +
-          res[4]
-      );
-      buttonLength5Store.push(
-        "btn" +
-          res[0] +
-          "-" +
-          res[1] +
-          "-" +
-          res[2] +
-          "-" +
-          res[3] +
-          "-" +
-          res[4]
-      );
-    } else if (num == 5) {
-      var res = orgTree[i][0].split("-");
-      fieldLength6Store.push(
-        "field" +
-          res[0] +
-          "-" +
-          res[1] +
-          "-" +
-          res[2] +
-          "-" +
-          res[3] +
-          "-" +
-          res[4] +
-          "-" +
-          res[5]
-      );
-      buttonLength6Store.push(
-        "btn" +
-          res[0] +
-          "-" +
-          res[1] +
-          "-" +
-          res[2] +
-          "-" +
-          res[3] +
-          "-" +
-          res[4] +
-          "-" +
-          res[5]
+      window[buttonLengthStoreStr].push(
+        btnPushStr.substring(0, btnPushStr.length - 1)
       );
     }
   }
